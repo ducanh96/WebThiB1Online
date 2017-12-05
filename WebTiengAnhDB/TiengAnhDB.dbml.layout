@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 8.5" name="TiengAnhDB">
+  <DataContextMoniker Name="/TiengAnhDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a27397a7-ae69-4abf-8514-ba00a85942ef" absoluteBounds="0.75, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/TiengAnhDBDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c78b2abb-2b06-4aca-8900-03a5520a9cf3" absoluteBounds="0.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3521dd68-c740-4f12-98bc-693d2ba7482f" absoluteBounds="3.5, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TiengAnhDBDataContext/DeThi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74c8ccda-4f4c-4b37-8d28-eb6e80a8fab8" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a610904e-d950-4177-a98b-9a019e42b291" absoluteBounds="6.25, 3.375, 2, 2.347801106770834">
+      <DataClassMoniker Name="/TiengAnhDBDataContext/CauHoi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47cc4ceb-0d53-47a8-9080-73a997346547" absoluteBounds="6.265, 3.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96e1e7e1-7514-44a5-b261-3f6a4f96849d" absoluteBounds="3.5, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TiengAnhDBDataContext/ChiTietChuDe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92a98896-b859-4ea3-ab27-bb6abee2959f" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d4f1e90f-cd6c-4a69-9ddd-cbe3f58b3a9e" absoluteBounds="9, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/TiengAnhDBDataContext/ChiTietDeThi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a23fa20-eb56-4f5c-9626-e558d73a6a60" absoluteBounds="9.015, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6a4aca3-838e-46e4-a5cf-4a2387225ce2" absoluteBounds="0.75, 2.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/TiengAnhDBDataContext/ChuDe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c260ddd-0457-43ff-ab5a-8b457752b938" absoluteBounds="0.765, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.53929768880208); (6.25 : 4.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiengAnhDBDataContext/ChiTietChuDe/ChiTietChuDe_CauHoi" />
+      <nodes>
+        <classShapeMoniker Id="96e1e7e1-7514-44a5-b261-3f6a4f96849d" />
+        <classShapeMoniker Id="a610904e-d950-4177-a98b-9a019e42b291" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 3.65949625651042); (9 : 3.65949625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiengAnhDBDataContext/CauHoi/CauHoi_ChiTietDeThi" />
+      <nodes>
+        <classShapeMoniker Id="a610904e-d950-4177-a98b-9a019e42b291" />
+        <classShapeMoniker Id="d4f1e90f-cd6c-4a69-9ddd-cbe3f58b3a9e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.78929768880208); (10 : 1.78929768880208); (10 : 2.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiengAnhDBDataContext/DeThi/DeThi_ChiTietDeThi" />
+      <nodes>
+        <classShapeMoniker Id="3521dd68-c740-4f12-98bc-693d2ba7482f" />
+        <classShapeMoniker Id="d4f1e90f-cd6c-4a69-9ddd-cbe3f58b3a9e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 2.625); (1.75 : 1.78929768880208); (3.5 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiengAnhDBDataContext/ChuDe/ChuDe_DeThi" />
+      <nodes>
+        <classShapeMoniker Id="b6a4aca3-838e-46e4-a5cf-4a2387225ce2" />
+        <classShapeMoniker Id="3521dd68-c740-4f12-98bc-693d2ba7482f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.97679768880208); (3.5 : 3.97679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TiengAnhDBDataContext/ChuDe/ChuDe_ChiTietChuDe" />
+      <nodes>
+        <classShapeMoniker Id="b6a4aca3-838e-46e4-a5cf-4a2387225ce2" />
+        <classShapeMoniker Id="96e1e7e1-7514-44a5-b261-3f6a4f96849d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
