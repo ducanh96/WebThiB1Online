@@ -196,6 +196,17 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\CauHoiController.cs" />
+    <Compile Include="Areas\admin\Models\model\Admin.cs" />
+    <Compile Include="Areas\admin\Models\model\CauHoi.cs" />
+    <Compile Include="Areas\admin\Models\model\DeThi.cs" />
+    <Compile Include="Areas\admin\Models\model\DeThiUI.cs" />
+    <Compile Include="Areas\admin\Models\model\LoginUI.cs" />
+    <Compile Include="Areas\admin\Models\model\Topic.cs" />
+    <Compile Include="Areas\admin\Models\model\TopicDetail.cs" />
+    <Compile Include="Areas\admin\Models\model\TopicUI.cs" />
+    <Compile Include="Areas\admin\Models\UI\CauHoiUI.cs" />
+    <Compile Include="Areas\admin\Models\model\User.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -271,6 +282,9 @@
     <Content Include="Areas\admin\assets\images\placeholder\255x150.png" />
     <Content Include="Areas\admin\assets\images\placeholder\530x270.png" />
     <Content Include="Areas\admin\assets\images\placeholder\550x280.png" />
+    <Content Include="Areas\admin\assets\image\1.1.jpg" />
+    <Content Include="Areas\admin\assets\image\1.2.jpg" />
+    <Content Include="Areas\admin\assets\image\1.3.jpg" />
     <Content Include="Areas\admin\assets\js\ace-editable.min.js" />
     <Content Include="Areas\admin\assets\js\ace-elements.min.js" />
     <Content Include="Areas\admin\assets\js\ace-extra.min.js" />
@@ -360,6 +374,9 @@
     <Content Include="Areas\admin\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\admin\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\admin\Views\ThemCauHoi.cshtml" />
+    <Content Include="Areas\admin\Views\CauHoi\Index.cshtml" />
+    <Content Include="Areas\admin\Views\CauHoi\Nghe.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -409,8 +426,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\admin\Controllers\" />
-    <Folder Include="Areas\admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
