@@ -32,6 +32,14 @@
     <!-- inline styles related to this page -->
     <!-- ace settings handler -->
     <script src="~/Areas/admin/assets/js/ace-extra.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#1").click(function(){
+                $("h1").html('<h1 id="home1"> Home ádsad</h1>');
+            });
+        });
+    </script>
 
     <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
     <!--[if lte IE 8]>
@@ -411,7 +419,7 @@
 
                     <ul class="submenu">
                         <li class="hover">
-                            <a href="tables.html">
+                            <a href="">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Nghe
                             </a>
@@ -420,7 +428,7 @@
                         </li>
 
                         <li class="hover">
-                            <a href="jqgrid.html">
+                            <a href="">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Nói
                             </a>
@@ -428,15 +436,15 @@
                             <b class="arrow"></b>
                         </li>
                         <li class="hover">
-                            <a href="jqgrid.html">
+                            <a href="">
                                 <i class="menu-icon fa fa-caret-right"></i>
-                                đọc
+                                Đọc
                             </a>
 
                             <b class="arrow"></b>
                         </li>
                         <li class="hover">
-                            <a href="jqgrid.html">
+                            <a href="~/CauHoi/Viet">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Viết
                             </a>
@@ -454,7 +462,7 @@
                     </ul>
                 </li>
 
-                <li class="hover">
+                <li class="hover" >
                     <a href="#" class="dropdown-toggle">
                         <i class="menu-icon fa fa-pencil-square-o"></i>
                         <span class="menu-text"> Quản lý câu hỏi </span>
@@ -465,26 +473,19 @@
                     <b class="arrow"></b>
 
                     <ul class="submenu">
-                        <li class="hover">
-                            <a href="form-elements.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
+                        <li class="hover" id="nghe">
+                            <a href="~/admin/CauHoi/Nghe" >
+                                  <i class="menu-icon fa fa-caret-right"></i>
                                 Nghe
                             </a>
 
                             <b class="arrow"></b>
                         </li>
 
-                        <li class="hover">
-                            <a href="form-elements-2.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                Nói
-                            </a>
-
-                            <b class="arrow"></b>
-                        </li>
+                      
 
                         <li class="hover">
-                            <a href="form-wizard.html">
+                            <a href="~/admin/CauHoi/Doc">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Đọc
                             </a>
@@ -493,7 +494,7 @@
                         </li>
 
                         <li class="hover">
-                            <a href="wysiwyg.html">
+                            <a href="~/admin/CauHoi/Viet">
                                 <i class="menu-icon fa fa-caret-right"></i>
                                 Viết
                             </a>
@@ -1048,12 +1049,9 @@
                     </div><!-- /.ace-settings-container -->
 
                     <div class="page-header">
-                        <h1>
+                        <h1 id="home1">
                             Home
-                            <small>
-                                <i class="ace-icon fa fa-angle-double-right"></i>
-                                Quản lý câu hỏi
-                            </small>
+                            
                         </h1>
                     </div><!-- /.page-header -->
 
@@ -1217,9 +1215,11 @@
 			 $(window).on('resize.ace.top_menu', function() {
 				$(document).triggerHandler('settings.ace.top_menu', ['sidebar_fixed' , $sidebar.hasClass('sidebar-fixed')]);
 			 });
-
+			 
+			 
 
 			});
+
     </script>
     <script type="text/javascript">
 			jQuery(function($){

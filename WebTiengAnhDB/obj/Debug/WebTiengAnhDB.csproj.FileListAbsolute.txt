@@ -1,0 +1,6 @@
+D:\Kỳ I Năm 4\Thiết kế giao diện NSD\TRừ Hưng\WebThiB1Online\WebTiengAnhDB\bin\Debug\WebTiengAnhDB.dll.config
+D:\Kỳ I Năm 4\Thiết kế giao diện NSD\TRừ Hưng\WebThiB1Online\WebTiengAnhDB\bin\Debug\WebTiengAnhDB.dll
+D:\Kỳ I Năm 4\Thiết kế giao diện NSD\TRừ Hưng\WebThiB1Online\WebTiengAnhDB\bin\Debug\WebTiengAnhDB.pdb
+D:\Kỳ I Năm 4\Thiết kế giao diện NSD\TRừ Hưng\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.csprojResolveAssemblyReference.cache
+D:\Kỳ I Năm 4\Thiết kế giao diện NSD\TRừ Hưng\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.dll
+D:\Kỳ I Năm 4\Thiết kế giao diện NSD\TRừ Hưng\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.pdb
