@@ -1,0 +1,7 @@
+F:\nam 4\tk giao dien nguoi su dung\WebThiB1Online\WebTiengAnhDB\bin\Debug\WebTiengAnhDB.dll.config
+F:\nam 4\tk giao dien nguoi su dung\WebThiB1Online\WebTiengAnhDB\bin\Debug\WebTiengAnhDB.dll
+F:\nam 4\tk giao dien nguoi su dung\WebThiB1Online\WebTiengAnhDB\bin\Debug\WebTiengAnhDB.pdb
+F:\nam 4\tk giao dien nguoi su dung\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.csprojResolveAssemblyReference.cache
+F:\nam 4\tk giao dien nguoi su dung\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.csproj.CoreCompileInputs.cache
+F:\nam 4\tk giao dien nguoi su dung\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.dll
+F:\nam 4\tk giao dien nguoi su dung\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.pdb
