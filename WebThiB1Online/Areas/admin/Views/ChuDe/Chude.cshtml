@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = "Chude";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="center">
+    <div class="col-sm-12">
+        <div class="tabbable">
+           
+
+            <div class="tab-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="input-group col-md-10">
+                                    <span class="input-group-addon">
+                                        <i class="ace-icon fa fa-check"></i>
+                                    </span>
+
+                                    <input type="text" class="form-control search-query" placeholder="Type your query" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-purple btn-sm">
+                                            <span class="ace-icon fa fa-search icon-on-right bigger-110"></span>
+                                            Search
+                                        </button>
+                                    </span>
+                                    <span class="input-group-btn" style="padding-left: 150px;padding-right: 140px;">
+                                        <a href="#modal-table" role="button" class="green" data-toggle="modal">
+                                            <button type="button" class="btn btn-success btn-sm">
+                                                <span class="ace-icon fa fa-pencil-square-o icon-on-right bigger-110"></span>
+                                                Thêm
+                                            </button>
+                                        </a>
+
+
+                                    </span>
+                                </div>
+                            </div><br />
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <table id="simple-table" class="table  table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th class="center">
+                                                    <label class="pos-rel">
+                                                        <input type="checkbox" class="ace" />
+                                                        <span class="lbl"></span>
+                                                    </label>
+                                                </th>
+                                                <th>Tên chủ đề</th>
+                                                <th>Ghi chú</th>
+                                                <th>Số câu hỏi</th>       
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+
+                                        @*<tbody>
+                                            @foreach (CauHoi c in lst)
+                                            {
+                                                <tr>
+                                                    <td class="center">
+                                                        <label class="pos-rel">
+                                                            <input type="checkbox" class="ace" />
+                                                            <span class="lbl"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>@c.TieuDe</td>
+                                                    <td>@c.DapAnA</td>
+                                                    <td>@c.DapAnB</td>
+                                                    <td>@c.DapAnC</td>
+                                                    <td>@c.DapAnD</td>
+                                                    <td>@c.DapAn</td>
+
+                                                    <td>
+                                                        <div class="hidden-sm hidden-xs btn-group">
+
+
+                                                            <button class="btn btn-xs btn-info">
+                                                                <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                            </button>
+
+                                                            <button class="btn btn-xs btn-danger">
+                                                                <i class="ace-icon fa fa-trash-o bigger-120">
+                                                                    @Html.ActionLink("Delete", "Delete", new { ID = c.ID })
+                                                                </i>
+                                                                @{
+                                                if (ViewBag.msgDelete != null)
+                                                {
+                                                    int check = (int)ViewBag.msgDelete;
+                                                    if (check == 1)
+                                                    {
+                                                        ScriptManager.RegisterClientScriptBlock(this.Page, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
+                                                    }
+                                                }
+                                                              }
+                                                            </button>
+                                                       </div>
+
+
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>*@
+                                    </table>
+                                </div><!-- /.span -->
+                            </div><!-- /.row -->
+
+                            <div class="hr hr-18 dotted hr-double"></div>
+
+
+                            <!-- poup them nghe -->
+                            <div id="modal-table" class="modal fade" tabindex="-1">
+                                <div class="col-md-1"></div>
+                                <div class=" col-md-10 ">
+                                    <div class="modal-content">
+                                        <div class="modal-header no-padding">
+                                            <div class="table-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                    <span class="white">&times;</span>
+                                                </button>
+                                                Thêm chủ đề
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-body no-padding">
+                                            <div class="row">
+                                                <!-- form them cau hoi -->
+                                                <div class="col-xs-12">
+                                                    <!-- PAGE CONTENT BEGINS -->
+                                                    <form class="form-horizontal" role="form">       
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Tên chủ đề: </label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" id="form-field-1-1" placeholder="tên chủ đề" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Ghi chú: </label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" id="form-field-1-1" placeholder="ghi chú" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Số câu hỏi: </label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" id="form-field-1-1" placeholder="số câu hỏi" class="form-control" />
+                                                            </div>
+                                                        </div>
+
+                                       
+
+                                                        <div class="hr hr-16 hr-dotted"></div>
+
+                                                        <div class="clearfix form-actions">
+                                                            <div class="col-md-offset-3 col-md-9">
+                                                                <button class="btn btn-info" type="button">
+                                                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                                                    Submit
+                                                                </button>
+
+                                                                &nbsp; &nbsp; &nbsp;
+                                                                <button class="btn" type="reset">
+                                                                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                                                                    Reset
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+                                                    <!-- PAGE CONTENT ENDS -->
+                                                </div><!-- /.col -->
+                                            </div><!-- /.row -->
+                                        </div>
+
+                                        <div class="modal-footer no-margin-top">
+                                            <button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
+                                                <i class="ace-icon fa fa-times"></i>
+                                                Close
+                                            </button>
+                                            <button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
+                                                <i class="ace-icon fa fa-check"></i>
+                                                Submit
+                                            </button>
+
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div>
+
+                            <!-- PAGE CONTENT ENDS -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->          
+            </div>
+
+            <div id="part4" class="tab-pane">
+                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
