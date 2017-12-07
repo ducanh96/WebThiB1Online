@@ -198,6 +198,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\CauHoiController.cs" />
+    <Compile Include="Areas\admin\Controllers\DeThiController.cs" />
+    <Compile Include="Areas\admin\Models\Commom.cs" />
     <Compile Include="Areas\admin\Models\model\Admin.cs" />
     <Compile Include="Areas\admin\Models\model\CauHoi.cs" />
     <Compile Include="Areas\admin\Models\model\DeThi.cs" />
