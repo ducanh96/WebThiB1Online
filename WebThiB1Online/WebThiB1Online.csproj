@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\CauHoiController.cs" />
+    <Compile Include="Areas\admin\Controllers\ChuDeController.cs" />
     <Compile Include="Areas\admin\Models\model\Admin.cs" />
     <Compile Include="Areas\admin\Models\model\CauHoi.cs" />
     <Compile Include="Areas\admin\Models\model\DeThi.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="Areas\admin\Models\model\TopicUI.cs" />
     <Compile Include="Areas\admin\Models\UI\CauHoiUI.cs" />
     <Compile Include="Areas\admin\Models\model\User.cs" />
+    <Compile Include="Areas\admin\Models\UI\ChuDeUI.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -380,6 +382,7 @@
     <Content Include="Areas\admin\Views\CauHoi\Nghe.cshtml" />
     <Content Include="Areas\admin\Views\CauHoi\Doc.cshtml" />
     <Content Include="Areas\admin\Views\CauHoi\Viet.cshtml" />
+    <Content Include="Areas\admin\Views\ChuDe\Chude.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
