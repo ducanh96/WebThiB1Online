@@ -381,6 +381,7 @@
     <Content Include="Areas\admin\Views\CauHoi\Index.cshtml" />
     <Content Include="Areas\admin\Views\CauHoi\Nghe.cshtml" />
     <Content Include="Areas\admin\Views\DeThi\Index.cshtml" />
+    <Content Include="Areas\admin\Views\DeThi\Nghe.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
