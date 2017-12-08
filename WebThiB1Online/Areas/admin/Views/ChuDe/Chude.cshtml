@@ -1,7 +1,10 @@
-﻿
+﻿@using WebThiB1Online.Areas.admin.Models
 @{
     ViewBag.Title = "Chude";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+    List<WebThiB1Online.Models.Topic>
+   lst = (List<WebThiB1Online.Models.Topic>
+       )ViewData["lstChuDe"];
 }
 
 <div class="center">
@@ -57,8 +60,8 @@
                                             </tr>
                                         </thead>
 
-                                        @*<tbody>
-                                            @foreach (CauHoi c in lst)
+                                        <tbody>
+                                            @foreach (WebThiB1Online.Models.Topic t  in lst)
                                             {
                                                 <tr>
                                                     <td class="center">
@@ -67,13 +70,9 @@
                                                             <span class="lbl"></span>
                                                         </label>
                                                     </td>
-                                                    <td>@c.TieuDe</td>
-                                                    <td>@c.DapAnA</td>
-                                                    <td>@c.DapAnB</td>
-                                                    <td>@c.DapAnC</td>
-                                                    <td>@c.DapAnD</td>
-                                                    <td>@c.DapAn</td>
-
+                                                    <td>@t.tenTopic</td>
+                                                    <td>@t.ghiChu</td>
+                                                    <td>@t.soCauHoi</td>
                                                     <td>
                                                         <div class="hidden-sm hidden-xs btn-group">
 
@@ -84,7 +83,7 @@
 
                                                             <button class="btn btn-xs btn-danger">
                                                                 <i class="ace-icon fa fa-trash-o bigger-120">
-                                                                    @Html.ActionLink("Delete", "Delete", new { ID = c.ID })
+                                                                    @Html.ActionLink("Delete", "Delete", new { ID = t.ID })
                                                                 </i>
                                                                 @{
                                                 if (ViewBag.msgDelete != null)
@@ -103,7 +102,7 @@
                                                     </td>
                                                 </tr>
                                             }
-                                        </tbody>*@
+                                        </tbody>
                                     </table>
                                 </div><!-- /.span -->
                             </div><!-- /.row -->

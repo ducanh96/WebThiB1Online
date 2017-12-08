@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebThiB1Online.Areas.admin.Models.UI;
+using WebThiB1Online.Models;
 namespace WebThiB1Online.Areas.admin.Controllers
 {
     public class ChuDeController : Controller
@@ -16,21 +17,9 @@ namespace WebThiB1Online.Areas.admin.Controllers
         }
         public ActionResult Chude()
         {
+            ViewData["lstChuDe"] = TopicUI.getDSChuDe();
             return View();
         }
-        public ActionResult Delete(int ID)
-        {
-            bool check = ChuDeUI.delete(ID);
-            if (check)
-            {
-                ViewBag.msgDelete = 1;
-            }
-            else
-            {
-                ViewBag.msgDelete = 0;
-            }
-
-            return RedirectToAction("Chude");
-        }
+        
 	}
 }
