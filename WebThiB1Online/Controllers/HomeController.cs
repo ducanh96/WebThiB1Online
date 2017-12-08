@@ -12,18 +12,32 @@ namespace WebThiB1Online.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult ReadingVocabulary()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
-
-        public ActionResult Contact()
+        public ActionResult ReadingVocabulary2()
         {
-            ViewBag.Message = "Your contact page.";
-
+            return View();
+        }
+        public ActionResult ReadingFillingWords()
+        {
+            return View();
+        }
+        public ActionResult ReadingUnderstanding()
+        {
+            return View();
+        }
+        public ActionResult SpeakingInterview()
+        {
+            return View();
+        }
+        public ActionResult WritingLetter()
+        {
+            return View();
+        }
+        public ActionResult ListeningPicture()
+        {
             return View();
         }
     }

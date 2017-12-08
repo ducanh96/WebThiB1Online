@@ -1,0 +1,7 @@
+D:\Study\Folder\WebThiB1Online\WebTiengAnhDB\bin\Debug\WebTiengAnhDB.dll.config
+D:\Study\Folder\WebThiB1Online\WebTiengAnhDB\bin\Debug\WebTiengAnhDB.dll
+D:\Study\Folder\WebThiB1Online\WebTiengAnhDB\bin\Debug\WebTiengAnhDB.pdb
+D:\Study\Folder\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.csprojResolveAssemblyReference.cache
+D:\Study\Folder\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.csproj.CoreCompileInputs.cache
+D:\Study\Folder\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.dll
+D:\Study\Folder\WebThiB1Online\WebTiengAnhDB\obj\Debug\WebTiengAnhDB.pdb
