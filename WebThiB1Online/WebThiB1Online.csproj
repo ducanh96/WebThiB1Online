@@ -199,6 +199,7 @@
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\CauHoiController.cs" />
     <Compile Include="Areas\admin\Controllers\ChuDeController.cs" />
+    <Compile Include="Areas\admin\Controllers\DeThiController.cs" />
     <Compile Include="Areas\admin\Models\model\Admin.cs" />
     <Compile Include="Areas\admin\Models\model\CauHoi.cs" />
     <Compile Include="Areas\admin\Models\model\DeThi.cs" />
@@ -382,6 +383,10 @@
     <Content Include="Areas\admin\Views\CauHoi\Doc.cshtml" />
     <Content Include="Areas\admin\Views\CauHoi\Viet.cshtml" />
     <Content Include="Areas\admin\Views\ChuDe\Chude.cshtml" />
+    <Content Include="Areas\admin\Views\DeThi\Doc.cshtml" />
+    <Content Include="Areas\admin\Views\DeThi\Index.cshtml" />
+    <Content Include="Areas\admin\Views\DeThi\Nghe.cshtml" />
+    <Content Include="Areas\admin\Views\DeThi\Viet.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
