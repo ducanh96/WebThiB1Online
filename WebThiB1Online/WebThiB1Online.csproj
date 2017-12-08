@@ -202,14 +202,13 @@
     <Compile Include="Areas\admin\Models\model\Admin.cs" />
     <Compile Include="Areas\admin\Models\model\CauHoi.cs" />
     <Compile Include="Areas\admin\Models\model\DeThi.cs" />
-    <Compile Include="Areas\admin\Models\model\DeThiUI.cs" />
-    <Compile Include="Areas\admin\Models\model\LoginUI.cs" />
+    <Compile Include="Areas\admin\Models\UI\DeThiUI.cs" />
+    <Compile Include="Areas\admin\Models\UI\LoginUI.cs" />
     <Compile Include="Areas\admin\Models\model\Topic.cs" />
     <Compile Include="Areas\admin\Models\model\TopicDetail.cs" />
-    <Compile Include="Areas\admin\Models\model\TopicUI.cs" />
+    <Compile Include="Areas\admin\Models\UI\TopicUI.cs" />
     <Compile Include="Areas\admin\Models\UI\CauHoiUI.cs" />
     <Compile Include="Areas\admin\Models\model\User.cs" />
-    <Compile Include="Areas\admin\Models\UI\ChuDeUI.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
