@@ -26,5 +26,33 @@ namespace WebThiB1Online.Controllers
 
             return View();
         }
+        public ActionResult ReadingVocabulary()
+        {
+            return View();
+        }
+        public ActionResult ReadingVocabulary2()
+        {
+            return View();
+        }
+        public ActionResult ReadingFillingWords()
+        {
+            return View();
+        }
+        public ActionResult ReadingUnderstanding()
+        {
+            return View();
+        }
+        public ActionResult SpeakingInterview()
+        {
+            return View();
+        }
+        public ActionResult WritingLetter()
+        {
+            return View();
+        }
+        public ActionResult ListeningPicture()
+        {
+            return View();
+        }
     }
 }
