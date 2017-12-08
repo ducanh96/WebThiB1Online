@@ -17,9 +17,13 @@ namespace WebThiB1Online.Models
         {
 
         }
-        public void XoaTopic(int maTopic)
+        public static bool XoaTopic(int maTopic)
         {
-
+            return Topic.XoaTopic(maTopic);
+        }
+        public static List<Topic> getDSChuDe()
+        {
+            return Topic.LayDSTopic();
         }
     }
 }
