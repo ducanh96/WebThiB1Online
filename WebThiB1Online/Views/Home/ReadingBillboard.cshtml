@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "ReadingVocabulary2";
+}
+<script src="~/Scripts/js/sweetalert.min.js"></script>
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-3 sidenav">
+            <h4>List</h4>
+            <ul class="nav nav-pills nav-stacked" id="dt-list"></ul>
+        </div>
+
+        <div class="col-sm-9">
+            <h4><small id="title">R1 - TEST 1</small></h4>
+            <hr>
+
+            <style>
+                ul li {
+                    list-style: none;
+                    color: black;
+                }
+
+                    ul li label {
+                        font-size: 16px;
+                        color: black;
+                    }
+
+                .question-title {
+                    background-color: darkgray;
+                    border-radius: 5px;
+                    height: 40px;
+                    text-align: center
+                }
+            </style>
+
+            <form id="form-content">
+                <div id="app-content">                    
+                </div>
+
+                <footer class="container-fluid">
+                    <button class="btn btn-primary">View Result</button>
+                    <button id="btn-retry" class="btn btn-success">Try again?</button>
+                </footer>
+            </form>
+
+        </div>
+    </div>
+</div>
+<br />
+<script src="~/Scripts/app/RBillboard.js"></script>

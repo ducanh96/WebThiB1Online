@@ -20,76 +20,28 @@
         height: 40px;
         text-align: center
     }
-    a:visited {
-        color: white;
-    }
-    a {
-        color: black;
-    }
 </style>
 
 <!-- .container -->
 <div class="container-fluid">
     <div class="row content">
         <div class="col-sm-3 sidenav">
-            <h4>Đề thi</h4>
+            <h4>List</h4>
             <ul class="nav nav-pills nav-stacked" id="dt-list">
-                @*<li class="active"><a href="#section1">R1 - Test 1</a></li>
-                    <li><a href="#section2">R2 - Test 2</a></li>
-                    <li><a href="#section3">R3 - Test 3</a></li>
-                    <li><a href="#section3">R4 - Test 4</a></li>
-                    <li><a href="#section2">R5 - Test 5</a></li>
-                    <li><a href="#section3">R6 - Test 6</a></li>
-                    <li><a href="#section3">R7 - Test 7</a></li>
-                    <li><a href="#section2">R8 - Test 8</a></li>
-                    <li><a href="#section3">R9 - Test 9</a></li>
-                    <li><a href="#section3">R10 - Test 10</a></li>*@
             </ul>
         </div>
 
         <div class="col-sm-9">
-            <h4><small id="title">HƯỚNG DẪN</small></h4>
+            <h4><small id="title">R1 - Test 1</small></h4>
             <hr>
 
             <form id="form-content">
                 <div id="app-content">
-                    @*<h2><b>Nội dung thi Đọc từ vựng ngữ pháp tiếng Anh B1</b></h2>
-                        <p>10 câu hỏi (10 điểm).</p>
-                        <p>Đọc 10 câu độc lập mỗi câu có một từ bỏ trống, chọn 1 từ đúng trong 4 từ cho sẵn (dạng trắc nghiệm ABCD) để điền vào chỗ trống. Các chỗ trống này cho phép kiểm tra kiến thức ngữ pháp, từ vựng, ngữ nghĩa và kiến thức văn hóa, xã hội.</p>
-                        <h2><b>Cách làm bài Đọc từ vựng ngữ pháp tiếng Anh B1</b></h2>
-                        <ul>
-                            <li>
-                                <p>Trước hết hãy xem những lựa chọn trả lời:</p>
-                            </li>
-                        </ul>
-                        <p style="padding-left: 60px;">Phương án lựa chọn là các dạng thức của một động từ: Cần xem chỗ trống cần động từ chia ở thì nào dựa vào các trạng từ/ ngữ chỉ thời gian, động từ chia theo chủ ngữ số ít hay nhiều, ở dạng chủ động/ bị động, động từ nguyên thể/ danh động từ</p>
-                        <p style="padding-left: 60px;">Phương án lựa chọn là các động từ khác nhau: Xét cách kết hợp của động từ với tân ngữ hoặc giới từ…</p>
-                        <p style="padding-left: 60px;">Phương án lựa chọn là các loại từ khác nhau của cùng một gốc từ: Đọc câu hỏi để xác định chỗ trống cần điền từ loại nào và dựa trên đuôi của các lựa chọn để xác định cho đúng&nbsp;</p>
-                        <p style="padding-left: 60px;">Phương án lựa chọn là các liên từ: Xem các liên từ này dùng để liên kết loại từ, cụm từ hay mệnh đề. Xác định tính chất liên kết và chọn từ phù hợp. Loại bài này yêu cầu nắm chắc các cấu trúc câu, cấu trúc song song, cấu trúc đối lập,….</p>
-                        <ul>
-                            <li>
-                                <p>Đọc mọi lựa chọn. Đừng bao giờ chọn câu trả lời trước khi đọc hết cả bốn lựa chọn. Một vài lựa chọn có thể rất giống nhau, và bạn có thể mắc lỗi do bất cẩn.</p>
-                            </li>
-                            <li>
-                                <p>Đọc lại toàn bộ câu với phần trả lời bạn đã chọn. Phải chắc chắn rằng câu trả lời của bạn là phù hợp. Nếu câu đọc lên nghe có vẻ không đúng thì có thể quả thật là nó không đúng. Nếu bạn không biết, hãy đoán và tiếp tục làm bài.</p>
-                            </li>
-                            <li>
-                                <p>Cẩn thận với những điểm sau khi bạn đưa trả lời của mình vào câu văn:</p>
-                            </li>
-                        </ul>
-                        <p style="padding-left: 60px;">Trả lời của bạn có thể có từ ngữ không cần thiết.</p>
-                        <p style="padding-left: 60px;">Nó có thể không hoàn chỉnh.</p>
-                        <p style="padding-left: 60px;">Nó có thể sai ngữ pháp. Nếu đúng vậy, hãy bỏ trả lời đó và xem xét lại 3 lựa chọn kia.</p>
-                        <ul>
-                            <li>
-                                <p>Dùng thời gian của mình một cách cẩn thận. Đừng tốn quá nhiều thời gian đến nỗi không có đủ thời gian để làm những phần còn lại. Phân chia thời gian thật kỹ lưỡng.</p>
-                            </li>
-                        </ul>*@
                 </div>
 
                 <footer class="container-fluid" style="margin: 10px auto;">
-                    <button id="btn-view-result" class="btn btn-primary">View Result</button>                  
-                    <a href="/Home/ReadingVocabulary" class="btn btn-success" style="!important;">Try again?</a>
+                    <button class="btn btn-primary">View Result</button>                  
+                    <button class="btn btn-success" id="btn-retry">Try again?</button>
                 </footer>
                 
             </form>

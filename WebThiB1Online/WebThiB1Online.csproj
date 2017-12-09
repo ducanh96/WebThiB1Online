@@ -395,6 +395,16 @@
     <Content Include="public\images\bg-sub-header.png" />
     <Content Include="public\images\blank.gif" />
     <Content Include="public\images\closedhand.cur" />
+    <Content Include="public\images\content\app\1.png" />
+    <Content Include="public\images\content\app\10.png" />
+    <Content Include="public\images\content\app\2.png" />
+    <Content Include="public\images\content\app\3.png" />
+    <Content Include="public\images\content\app\4.png" />
+    <Content Include="public\images\content\app\5.png" />
+    <Content Include="public\images\content\app\6.png" />
+    <Content Include="public\images\content\app\7.png" />
+    <Content Include="public\images\content\app\8.png" />
+    <Content Include="public\images\content\app\9.png" />
     <Content Include="public\images\content\avatars\1.jpg" />
     <Content Include="public\images\content\avatars\2.jpg" />
     <Content Include="public\images\content\avatars\3.jpg" />
@@ -688,6 +698,7 @@
     <Content Include="public\js\waypoints.min.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\app\RBillboard.js" />
     <Content Include="Scripts\app\RVocabulary.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -771,7 +782,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\ReadingVocabulary.cshtml" />
-    <Content Include="Views\Home\ReadingVocabulary2.cshtml" />
+    <Content Include="Views\Home\ReadingBillboard.cshtml" />
     <Content Include="Views\Home\ReadingFillingWords.cshtml" />
     <Content Include="Views\Home\ReadingUnderstanding.cshtml" />
     <Content Include="Views\Home\SpeakingInterview.cshtml" />

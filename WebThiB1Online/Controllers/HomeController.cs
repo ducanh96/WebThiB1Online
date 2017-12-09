@@ -30,7 +30,7 @@ namespace WebThiB1Online.Controllers
         {
             return View();
         }
-        public ActionResult ReadingVocabulary2()
+        public ActionResult ReadingBillBoard()
         {
             return View();
         }
