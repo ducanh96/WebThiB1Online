@@ -699,6 +699,7 @@
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\app\RBillboard.js" />
+    <Content Include="Scripts\app\RFillingWords.jsx" />
     <Content Include="Scripts\app\RUnderstanding.jsx" />
     <Content Include="Scripts\app\RVocabulary.js" />
     <Content Include="Scripts\bootstrap.js" />

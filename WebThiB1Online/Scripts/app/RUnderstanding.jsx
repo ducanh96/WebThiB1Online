@@ -155,8 +155,8 @@ class RUnderstanding extends React.Component {
 				})
 				console.log(lastResult);
 				swal(
-					`Correct: ${lastResult} / ${list[0].questions.length}`,
-					`Total scores: ${Math.ceil(lastResult / list[0].questions.length * 100)}`,
+					`Correct: ${lastResult} / ${list[index].questions.length}`,
+					`Total scores: ${Math.ceil(lastResult / list[index].questions.length * 100)}`,
 					"success"
 				)
 				this.setState({lastResult: lastResult});
