@@ -405,6 +405,21 @@
     <Content Include="public\images\content\app\7.png" />
     <Content Include="public\images\content\app\8.png" />
     <Content Include="public\images\content\app\9.png" />
+    <Content Include="public\images\content\app\l0.png" />
+    <Content Include="public\images\content\app\l1.png" />
+    <Content Include="public\images\content\app\l10.PNG" />
+    <Content Include="public\images\content\app\l11.PNG" />
+    <Content Include="public\images\content\app\l12.PNG" />
+    <Content Include="public\images\content\app\l13.PNG" />
+    <Content Include="public\images\content\app\l14.PNG" />
+    <Content Include="public\images\content\app\l2.png" />
+    <Content Include="public\images\content\app\l3.png" />
+    <Content Include="public\images\content\app\l4.png" />
+    <Content Include="public\images\content\app\l5.png" />
+    <Content Include="public\images\content\app\l6.png" />
+    <Content Include="public\images\content\app\l7.png" />
+    <Content Include="public\images\content\app\l8.PNG" />
+    <Content Include="public\images\content\app\l9.PNG" />
     <Content Include="public\images\content\avatars\1.jpg" />
     <Content Include="public\images\content\avatars\2.jpg" />
     <Content Include="public\images\content\avatars\3.jpg" />
@@ -698,6 +713,10 @@
     <Content Include="public\js\waypoints.min.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\app\LFillingWords.js" />
+    <Content Include="Scripts\app\LFillingWords.jsx" />
+    <Content Include="Scripts\app\LMCQ.jsx" />
+    <Content Include="Scripts\app\LPicture.jsx" />
     <Content Include="Scripts\app\RBillboard.js" />
     <Content Include="Scripts\app\RFillingWords.jsx" />
     <Content Include="Scripts\app\RUnderstanding.jsx" />
@@ -793,6 +812,8 @@
     <Content Include="Views\Home\SpeakingInterview.cshtml" />
     <Content Include="Views\Home\WritingLetter.cshtml" />
     <Content Include="Views\Home\ListeningPicture.cshtml" />
+    <Content Include="Views\Home\ListeningMCQuestions.cshtml" />
+    <Content Include="Views\Home\ListeningFillingWords.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

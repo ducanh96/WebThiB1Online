@@ -54,5 +54,13 @@ namespace WebThiB1Online.Controllers
         {
             return View();
         }
+        public ActionResult ListeningMCQuestions()
+        {
+            return View();
+        }
+        public ActionResult ListeningFillingWords()
+        {
+            return View();
+        }
     }
 }
