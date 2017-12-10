@@ -97,7 +97,7 @@
     }
     deploy() {
         let html = '';
-        this.state.list.forEach((item, i) => html += `<li class="active"><a href="#" data-id=${i}>R${i + 1} - Test ${i + 1}</a></li>`);
+        this.state.list.forEach((item, i) => html += `<li class=${this.state.index === i ? 'active' : ''}><a href="#" data-id=${i}>R2 - Test ${i + 1}</a></li>`);
         $('#dt-list').html(html);
 
         // render
@@ -154,10 +154,13 @@
             
         // change page
         const that = this;
-        $('#dt-list').find('a').on('click', function(e) {
+        $('#dt-list').find('a').on('click', function (e) {
             e.preventDefault();
+            $('#dt-list').find(`a[data-id=${that.state.index}]`).parent().toggleClass('active');
             that.state.index = $(this).data('id');
             that.render();
+            $(this).parent().toggleClass('active');
+            return;
         })
     }
     retry() {

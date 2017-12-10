@@ -699,6 +699,7 @@
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\app\RBillboard.js" />
+    <Content Include="Scripts\app\RUnderstanding.jsx" />
     <Content Include="Scripts\app\RVocabulary.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -740,8 +741,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\babel.min.js" />
     <Content Include="Scripts\js\bootstrap.min.js" />
     <Content Include="Scripts\js\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\js\react-dom.production.min.js" />
+    <Content Include="Scripts\js\react.production.min.js" />
     <Content Include="Scripts\js\sweetalert.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />

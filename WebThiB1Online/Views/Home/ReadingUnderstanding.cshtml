@@ -2,98 +2,38 @@
 @{
     ViewBag.Title = "ReadingUnstanding";
 }
+<script src="~/Scripts/js/react.production.min.js"></script>
+<script src="~/Scripts/js/react-dom.production.min.js"></script>
+<script src="~/Scripts/js/babel.min.js"></script>
+<script src="~/Scripts/js/sweetalert.min.js"></script>
 
-<div class="container-fluid">
-    <div class="row content">
-        <div class="col-sm-3 sidenav">
-            <h4>Đề thi</h4>
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#section1">R1 - Test 1</a></li>
-                <li><a href="#section2">R2 - Test 2</a></li>
-                <li><a href="#section3">R3 - Test 3</a></li>
-                <li><a href="#section3">R4 - Test 4</a></li>
-                <li><a href="#section2">R5 - Test 5</a></li>
-                <li><a href="#section3">R6 - Test 6</a></li>
-                <li><a href="#section3">R7 - Test 7</a></li>
-                <li><a href="#section2">R8 - Test 8</a></li>
-                <li><a href="#section3">R9 - Test 9</a></li>
-                <li><a href="#section3">R10 - Test 10</a></li>
-            </ul>
-        </div>
+<style>
+    ul li {
+        list-style: none;
+        color: black;
+    }
 
-        <div class="col-sm-9">
-            <h4><small>R1 - TEST 1</small></h4>
-            <hr>
-            <style>
-                ul li {
-                    list-style: none;
-                    color: black;
-                }
+        ul li label {
+            font-size: 16px;
+        }
 
-                    ul li label {
-                        font-size: 16px;
-                    }
+    p {
+        color: black;
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .question-title {
+        background-color: aquamarine;
+        border-radius: 5px;
+        height: 40px;
+        text-align: center;
+    }
+    .ion {
+        margin-left: 12px;
+    }
+</style>
 
-                p {
-                    color: black;
-                    font-size: 18px;
-                    font-weight: 300;
-                }
-            </style>
-
-            <div>
-                <p>A month ago I had no idea that on a Saturday afternoon in November I’d be hanging 30 metres above the ground and enjoying it. Now I looked down at the river far below me, and realised why people love rock-climbing.<br>My friend Matt and I had arrived at the Activity Centre on Friday evening. The accommodation wasn’t wonderful, but we had everything we needed (beds, blankets, food), and we were pleased to be out of the city and in the fresh air.<br>On Saturday morning we met the other ten members of our group. Cameron had come along with two friends, Kevin and Simon, while sisters Carole and Lynn had come with Amanda. We had come from various places and none of us knew the area.<br>We knew we were going to spend the weekend outdoors, but none of us was sure exactly how. Half of us spent the morning caving while the others went rock- climbing and then we changed at lunchtime. Matt and I went to the caves first. Climbing out was harder than going in, but after a good deal of pushing, we were out at last - covered in mud but pleased and excited by what we’d done.</p>
-            </div>
-
-            <div>
-                <div style="background-color: aquamarine; border-radius: 5px; height: 40px; text-align: center">
-                    <h4>Question 1</h4>
-                </div>
-                <div style="margin-top: 15px;">
-                    <h5>1. Tom doesn't like dancing, but Mike ..........</h5>
-                    <ul>
-                        <li><label><input type="radio" name="q1" value="does" /> A. does</label></li>
-                        <li><label><input type="radio" name="q1" value="did" /> B. did</label></li>
-                        <li><label><input type="radio" name="q1" value="do" /> C. do</label></li>
-                        <li><label><input type="radio" name="q1" value="doesn't" /> D. doesn't</label></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div>
-                <div style="background-color: aquamarine; border-radius: 5px; height: 40px; text-align: center">
-                    <h4>Question 2</h4>
-                </div>
-                <div style="margin-top: 15px;">
-                    <h5>2. Listen! Somebody .......... for help</h5>
-                    <ul>
-                        <li><label><input type="radio" name="q2" value="are screaming" /> A. are screaming</label></li>
-                        <li><label><input type="radio" name="q2" value="scream" /> B. scream</label></li>
-                        <li><label><input type="radio" name="q2" value="is screaming" /> C. is screaming</label></li>
-                        <li><label><input type="radio" name="q2" value="has screamed" /> D. has screamed</label></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div>
-                <div style="background-color: aquamarine; border-radius: 5px; height: 40px; text-align: center">
-                    <h4>Question 3</h4>
-                </div>
-                <div style="margin-top: 15px;">
-                    <h5>3. Waiter! There .......... forks on this table</h5>
-                    <ul>
-                        <li><label><input type="radio" name="q3" value="are not some" /> A. are not some</label></li>
-                        <li><label><input type="radio" name="q3" value="isn't any'" /> B. isn't any</label></li>
-                        <li><label><input type="radio" name="q3" value="are not any" /> C. are not any</label></li>
-                        <li><label><input type="radio" name="q3" value="are some" /> D. are some</label></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
+<div class="container-fluid" id="app">    
 </div>
-
-<footer class="container-fluid">
-    <p>Footer Text</p>
-</footer>
+<br />
+<script type="text/babel" src="~/Scripts/app/RUnderstanding.jsx"></script>
