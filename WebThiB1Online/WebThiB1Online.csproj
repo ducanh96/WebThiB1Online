@@ -761,6 +761,8 @@
     <Content Include="public\fonts\slick.eot" />
     <Content Include="public\fonts\slick.ttf" />
     <Content Include="public\fonts\slick.woff" />
+    <Content Include="Areas\admin\Views\DeThi\ThemDeThi.cshtml" />
+    <Content Include="Areas\admin\Views\DeThi\ThemDeThiNghe.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "ThemDeThi";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="center">Thêm đề thi phần từ vựng ngữ pháp</h2>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="center">
+            <label>Mã đề: </label><input type="text" value="Đề 3" disabled="disabled" />
+        </div>
+    <br />
+    <br />
+
+        <table id="simple-table" class="table  table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="center">
+                        
+                    </th>
+                    @*<th class="detail-col">Details</th>*@
+                    <th>Tiêu đề câu hỏi</th>
+                    <th>Đán án A</th>
+                    <th>Đáp án B</th>
+                    <th>Đáp án C</th>
+                    <th>Đáp án D</th>
+                    <th>Đáp án</th>
+                  
+
+                </tr>
+            </thead>
+
+            <tbody>
+               
+                    <tr>
+                        <td class="center">
+                            <label class="pos-rel">
+                                <input type="checkbox" class="ace" />
+                                <span class="lbl"></span>
+                            </label>
+                        </td>
+
+
+
+                        <td>1. Tom doesn't like dancing, but Mike..........</td>
+                        <td>does</td>
+                        <td>did</td>
+                        <td>do</td>
+                        <td>doesn't</td>
+                        <td>C</td>
+
+                       
+                    </tr>
+
+
+                <tr>
+                    <td class="center">
+                        <label class="pos-rel">
+                            <input type="checkbox" class="ace" />
+                            <span class="lbl"></span>
+                        </label>
+                    </td>
+
+
+
+                    <td>2. Tom doesn't like dancing, but Mike..........</td>
+                    <td>does</td>
+                    <td>did</td>
+                    <td>do</td>
+                    <td>doesn't</td>
+                    <td>C</td>
+
+                   
+
+                </tr>
+
+
+                <tr>
+                    <td class="center">
+                        <label class="pos-rel">
+                            <input type="checkbox" class="ace" />
+                            <span class="lbl"></span>
+                        </label>
+                    </td>
+
+
+
+                    <td>3. Tom doesn't like dancing, but Mike..........</td>
+                    <td>does</td>
+                    <td>did</td>
+                    <td>do</td>
+                    <td>doesn't</td>
+                    <td>C</td>
+
+                 
+                </tr>
+                
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-danger btn-sm">
+            <span class="ace-icon fa fa-pencil-square-o icon-on-right bigger-110"></span>
+            Hủy
+        </button>
+        <button type="button" class="btn btn-success btn-sm">
+            <span class="ace-icon fa fa-pencil-square-o icon-on-right bigger-110"></span>
+            Tạo đề thi
+        </button>
+       
+    </div><!-- /.span -->
+</div><!-- /.row -->

@@ -32,6 +32,16 @@ namespace WebThiB1Online.Areas.admin.Controllers
             ViewData["lstDocPart1"] = CauHoiUI.getDSCauHoiDocPart1();
             return View();
         }
-        
+
+        public ActionResult ThemDeThi()
+        {
+            return View();
+        }
+
+        public ActionResult ThemDeThiNghe()
+        {
+            ViewData["lstDocPart1"] = CauHoiUI.getDSCauHoiDocPart1();
+            return View();
+        }
     }
 }
