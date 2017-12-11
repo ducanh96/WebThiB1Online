@@ -718,6 +718,7 @@
     <Content Include="Scripts\app\LMCQ.jsx" />
     <Content Include="Scripts\app\LPicture.jsx" />
     <Content Include="Scripts\app\RBillboard.jsx" />
+    <Content Include="Scripts\app\RFillingWords.js" />
     <Content Include="Scripts\app\RFillingWords.jsx" />
     <Content Include="Scripts\app\RUnderstanding.jsx" />
     <Content Include="Scripts\app\RVocabulary.jsx" />
