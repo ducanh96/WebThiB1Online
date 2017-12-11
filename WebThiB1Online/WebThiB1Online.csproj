@@ -717,10 +717,11 @@
     <Content Include="Scripts\app\LFillingWords.jsx" />
     <Content Include="Scripts\app\LMCQ.jsx" />
     <Content Include="Scripts\app\LPicture.jsx" />
-    <Content Include="Scripts\app\RBillboard.js" />
+    <Content Include="Scripts\app\RBillboard.jsx" />
     <Content Include="Scripts\app\RFillingWords.jsx" />
     <Content Include="Scripts\app\RUnderstanding.jsx" />
-    <Content Include="Scripts\app\RVocabulary.js" />
+    <Content Include="Scripts\app\RVocabulary.jsx" />
+    <Content Include="Scripts\app\WRewriteSentences.jsx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -810,10 +811,12 @@
     <Content Include="Views\Home\ReadingFillingWords.cshtml" />
     <Content Include="Views\Home\ReadingUnderstanding.cshtml" />
     <Content Include="Views\Home\SpeakingInterview.cshtml" />
-    <Content Include="Views\Home\WritingLetter.cshtml" />
+    <Content Include="Views\Home\WritingRewriteSentences.cshtml" />
     <Content Include="Views\Home\ListeningPicture.cshtml" />
     <Content Include="Views\Home\ListeningMCQuestions.cshtml" />
     <Content Include="Views\Home\ListeningFillingWords.cshtml" />
+    <Content Include="Views\Home\WritingLetter.cshtml" />
+    <Content Include="Views\Home\WritingStory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -2,7 +2,10 @@
 @{
     ViewBag.Title = "ReadingGrammar";
 }
+<script src="~/Scripts/js/react.production.min.js"></script>
 <script src="~/Scripts/js/sweetalert.min.js"></script>
+<script src="~/Scripts/js/react-dom.production.min.js"></script>
+<script src="~/Scripts/js/babel.min.js"></script>
 <style>
     ul li {
         list-style: none;
@@ -15,39 +18,18 @@
         }
 
     .question-title {
-        background-color: darkgray;
+        background-color: lightblue;
         border-radius: 5px;
         height: 40px;
         text-align: center
     }
+    .ion {
+        margin-left: 12px;
+    }
 </style>
 
 <!-- .container -->
-<div class="container-fluid">
-    <div class="row content">
-        <div class="col-sm-3 sidenav">
-            <h4>List</h4>
-            <ul class="nav nav-pills nav-stacked" id="dt-list">
-            </ul>
-        </div>
-
-        <div class="col-sm-9">
-            <h4><small id="title">R1 - Test 1</small></h4>
-            <hr>
-
-            <form id="form-content">
-                <div id="app-content">
-                </div>
-
-                <footer class="container-fluid" style="margin: 10px auto;">
-                    <button class="btn btn-primary">View Result</button>                  
-                    <button class="btn btn-success" id="btn-retry">Try again?</button>
-                </footer>
-                
-            </form>
-        </div>
-    </div>
+<div class="container-fluid" id="app">
 </div>
-
-
-<script src="~/Scripts/app/RVocabulary.js"></script>
+<br />
+<script src="~/Scripts/app/RVocabulary.jsx" type="text/babel"></script>

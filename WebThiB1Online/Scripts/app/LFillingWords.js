@@ -144,6 +144,8 @@
         $('#app-dt-list').find('a').on('click', function(e) {
             e.preventDefault();
             that.state.index = $(this).data('id');
+            that.state.passed = 0;
+            that.state.lastResult = 0;
             that.render();
         })
         //

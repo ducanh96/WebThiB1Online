@@ -1,5 +1,9 @@
-﻿class RVocabulary {
+﻿// import React from 'react';
+// import ReactDOM from 'react-dom';
+
+class RVocabulary extends React.Component {
     constructor() {
+		super();
         this.state = {
             list: [
                 {
@@ -192,102 +196,123 @@
                 }
             ],
             index: 0,
-            lastResult: 0
+            lastResult: 0,
+			passed: 0
         }
+		this.viewResult = this.viewResult.bind(this);
+		this.changePage = this.changePage.bind(this);
+		this.makeRetry = this.makeRetry.bind(this);
     }
-    deploy() {
-        let html = '';
-        this.state.list.forEach((item, i) => html += `<li class=${this.state.index === i ? 'active' : ''}><a href='#' data-id=${i}>R1 - Test ${i + 1}</a></li>`);
-        $('#dt-list').html(html);
-        // render
-        this.render();
-        // events
-        this.eventHandler();
-    }
-    eventHandler() {
-        // view result
-        $('#form-content').on('submit', (e) => {
-            e.preventDefault();
-            if(this.state.lastResult !== 0) {
-                swal({
-                    title: 'Try again?',
-                    icon: 'warning',
-                    button: "Let's me try another!"
-                }).then(value => {
-                    if(value) {
-                        this.retry();
-                    }
-                })
-            } else {
-                let {list, index, lastResult} = this.state;
-                const result = $('#app-content').find('input[type="radio"]:checked');
-                if (result.length === list[index].questions.length) {
-                    let val;                    
+    viewResult(e) {
+        e.preventDefault();
+		let {list, index, lastResult, passed} = this.state;
 
-                    list[index].questions.map((item, i) => {
-                        val = $(result[i]).val();
-                        if (item.answer === val) {
-                            lastResult += 1;
-                            $(result[i]).parent().css('color', 'green').append('<i style="margin-left: 12px" class="ion ion-checkmark-round"></i>');
-                        } else {
-                            $(result[i]).parent().css('color', 'red').append('<i style="margin-left: 12px" class="ion ion-close-round"></i>');
-                        }
-                    })
+		const result = document.querySelectorAll('input[type="radio"]:checked');
+		if(passed !== 0) {
+			swal({
+				title: passed === 1 ? 'Try again?' : 'Do next test',
+				text: `Your last score: ${lastResult}`,
+				icon: 'info'
+			}).then(res => {
+				if(res) {					
+					this.resetForm();
+					if(passed === 2) {
+						this.setState({index: index >= list.length-1 ? 0 : index+1});
+					}
+					this.setState({lastResult: 0, passed: 0})
+				}
+			})
+		} else {
+			if(result.length === list[index].questions.length) {
+				let itag;
 
-                    swal(
-                        `Correct: ${lastResult} / ${list[0].questions.length}`,
-                        `Total scores: ${Math.ceil(lastResult / list[0].questions.length * 100)}`,
-                        "success");
+				list[index].questions.map((item, i) => {
+					itag = document.createElement('i');
+					if(item.answer === result[i].value) {
+						lastResult ++;
 
-                    this.state.lastResult = lastResult;
-                } else {
-                    swal('Message', 'You should answer all questions before view result!', 'error');
-                }
-            }
-        })
-        // retry
-        $('#btn-retry').on('click', (e) => {
-            e.preventDefault();
-            this.retry();
-        })
-        // change page
-        const that = this;
-        $('#dt-list').find('a').on('click', function (e) {
-            e.preventDefault();
-            $('#dt-list').find(`a[data-id=${that.state.index}]`).parent().toggleClass('active');
-            that.state.index = $(this).data('id');
-            that.render();
-            $(this).parent().toggleClass('active');
-            return;
-        })
+						itag.className = "ion ion-checkmark-round";
+						result[i].parentNode.appendChild(itag);
+						result[i].parentNode.style.color = 'green';
+					} else {
+						itag.className = "ion ion-close-round";
+						result[i].parentNode.appendChild(itag);
+						result[i].parentNode.style.color = 'red';
+					}
+				})
+
+				const score = Math.ceil(lastResult / list[index].questions.length * 100);
+				this.setState({lastResult: score, passed: score < 50 ? 1 : 2});
+				swal(`Correct: ${lastResult} / ${list[index].questions.length}`, `Total score: ${score}`, 'success');
+			} else {
+				swal('Message', 'You should answer all questions before view result!', 'error');
+			}
+		}
     }
-    retry() {
-        this.state.lastResult = 0;
-        this.render();
+    makeRetry(e) {
+		e.preventDefault();
+        this.resetForm();
+		this.setState({lastResult: 0, passed: 0});
     }
+	changePage(i) {
+		this.resetForm();
+		this.setState({index: i, lastResult: 0, passed: 0});
+	}
+	resetForm() {
+		const result = document.querySelectorAll('input[type="radio"]:checked');
+		for(let i=0;i<result.length;i++) {
+			if(result[i].nextElementSibling) {
+				result[i].parentNode.removeChild(result[i].nextElementSibling);
+				result[i].parentNode.style.color = 'black';
+			}
+		}
+		this.refs.formContent.reset();
+	}
     render() {
         const {list, index} = this.state;
+		return (
+			<div className="row content">
+				<div className="col-sm-3 sidenav">
+					<h4>List</h4>
+					<ul className="nav nav-pills nav-stacked">
+					{
+						list.map((item, i) => <li key={i} className={index === i ? 'active' : ''}><a onClick={this.changePage.bind(this, i)}>R1 - Test {i+1}</a></li>)
+					}
+					</ul>
+				</div>
 
-        $('#title').html(`R${index + 1} - Test ${index + 1}`);
-        //
-        let html = '';
-        list[index].questions.map((item, i) => (
-            html += `<div>
-                        <div class="question-title">
-                            <h4>Question ${i + 1}</h4>
-                        </div>
-                        <div style="margin-top: 15px;">
-                            <h5>${i + 1}. ${item.title}</h5>
-                            <ul>
-                                <li><label><input type="radio" name=${i} value="${item.answerA}" /> A.${item.answerA}</label></li>
-                                <li><label><input type="radio" name=${i} value="${item.answerB}" /> B.${item.answerB}</label></li>
-                                <li><label><input type="radio" name=${i} value="${item.answerC}" /> C.${item.answerC}</label></li>
-                                <li><label><input type="radio" name=${i} value="${item.answerD}" /> D.${item.answerD}</label></li>
-                            </ul>
-                        </div>
-                    </div>`
-        ));
-        $('#app-content').html(html);
+				<div className="col-sm-9">
+					<h4><small>R1 - Test {index+1}</small></h4>
+					<hr />
+
+					<form ref="formContent" onSubmit={this.viewResult}>
+					{
+						list[index].questions.map((item, i) => (
+							<div>
+								<div className="question-title">
+									<h4>Question {i + 1}</h4>
+								</div>
+								<div style={{marginTop: 15}}>
+									<h5>{i + 1}. {item.title}</h5>
+									<ul>
+										<li><label><input type="radio" name={i} value={item.answerA} /> A.{item.answerA}</label></li>
+										<li><label><input type="radio" name={i} value={item.answerB} /> B.{item.answerB}</label></li>
+										<li><label><input type="radio" name={i} value={item.answerC} /> C.{item.answerC}</label></li>
+										<li><label><input type="radio" name={i} value={item.answerD} /> D.{item.answerD}</label></li>
+									</ul>
+								</div>
+							</div>
+						))
+					}
+
+					<footer className="container-fluid">
+						<button className="btn btn-primary" style={{marginRight: 5}}>View Result</button>                  
+						<button className="btn btn-success" onClick={this.makeRetry}>Try again?</button>
+					</footer>                
+					</form>
+				</div>
+			</div>
+		)
     }
 }
-new RVocabulary().deploy();
+ReactDOM.render(<RVocabulary />, document.getElementById('app'));

@@ -46,7 +46,15 @@ namespace WebThiB1Online.Controllers
         {
             return View();
         }
+        public ActionResult WritingRewriteSentences()
+        {
+            return View();
+        }
         public ActionResult WritingLetter()
+        {
+            return View();
+        }
+        public ActionResult WritingStory()
         {
             return View();
         }

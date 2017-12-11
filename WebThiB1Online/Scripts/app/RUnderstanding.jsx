@@ -115,7 +115,7 @@ class RUnderstanding extends React.Component {
                 }
 			],
 			index: 0,
-			lastResult: 0
+			lastResult: 0, passed: 0
 		}
 
 		this.viewResult = this.viewResult.bind(this);
@@ -123,66 +123,69 @@ class RUnderstanding extends React.Component {
 		this.changePage = this.changePage.bind(this);
 	}
 	viewResult(e) {
-		e.preventDefault();
-		if(this.state.lastResult !== 0) {
-			swal('Try again?', `Your last score is: ${this.state.lastResult / this.state.list[0].questions.length * 100}`, 'warning', {button: 'Do next test!'}).then(result => {
-				if(result) {
-					this.changePage(this.state.index >= this.state.list.length-1 ? 0 : this.state.index+1);
+        e.preventDefault();
+		let {list, index, lastResult, passed} = this.state;
+
+		const result = document.querySelectorAll('input[type="radio"]:checked');
+		if(passed !== 0) {
+			swal({
+				title: passed === 1 ? 'Try again?' : 'Do next test',
+				text: `Your last score: ${lastResult}`,
+				icon: 'info'
+			}).then(res => {
+				if(res) {					
+					this.resetForm();
+					if(passed === 2) {
+						this.setState({index: index >= list.length-1 ? 0 : index+1});
+					}
+					this.setState({lastResult: 0, passed: 0})
 				}
-			})			
-		}
-		else { // not finshed exam yet
-			const result = document.querySelectorAll('input[type="radio"]:checked');
+			})
+		} else {
+			if(result.length === list[index].questions.length) {
+				let itag;
 
-			if(result.length === this.state.list[this.state.index].questions.length) {
-				let {list, index, lastResult} = this.state;
-				let radio, itag;
 				list[index].questions.map((item, i) => {
-					itag = document.createElement('i'); // make an i tag
-					radio = document.querySelector(`input[type="radio"][value="${result[i].value}"]:checked`); // select current radio button in result list
-
+					itag = document.createElement('i');
 					if(item.answer === result[i].value) {
-						lastResult += 1;	// plus score
+						lastResult ++;
 
-						itag.className='ion ion-checkmark-round'; // set class to i tag is checkmark if the result is correct			
-						radio.parentNode.appendChild(itag); // append this i tag to the parent of that radio button
-						radio.parentNode.style.color='green'; // set text color of parent of that radio button
+						itag.className = "ion ion-checkmark-round";
+						result[i].parentNode.appendChild(itag);
+						result[i].parentNode.style.color = 'green';
 					} else {
-						itag.className='ion ion-close-round';					
-						radio.parentNode.appendChild(itag);
-						radio.parentNode.style.color='red';
+						itag.className = "ion ion-close-round";
+						result[i].parentNode.appendChild(itag);
+						result[i].parentNode.style.color = 'red';
 					}
 				})
-				console.log(lastResult);
-				swal(
-					`Correct: ${lastResult} / ${list[index].questions.length}`,
-					`Total scores: ${Math.ceil(lastResult / list[index].questions.length * 100)}`,
-					"success"
-				)
-				this.setState({lastResult: lastResult});
-			} else { // all question are not filled
-				swal('Message', 'You should answer all the questions before check for result!', 'error');
+
+				const score = Math.ceil(lastResult / list[index].questions.length * 100);
+				this.setState({lastResult: score, passed: score < 50 ? 1 : 2});
+				swal(`Correct: ${lastResult} / ${list[index].questions.length}`, `Total score: ${score}`, 'success');
+			} else {
+				swal('Message', 'You should answer all questions before view result!', 'error');
 			}
 		}
-	}
-	makeRetry(e) {
+    }
+    makeRetry(e) {
 		e.preventDefault();
+        this.resetForm();
+		this.setState({lastResult: 0, passed: 0});
+    }
+	changePage(i) {
 		this.resetForm();
-		this.refs.formContent.reset();
-	}
-	changePage(i) {		
-		this.resetForm();
-		this.refs.formContent.reset();
-		this.setState({index: i, lastResult: 0});		
+		this.setState({index: i, lastResult: 0, passed: 0});
 	}
 	resetForm() {
 		const result = document.querySelectorAll('input[type="radio"]:checked');
-		for(let i=0;i<result.length;i++){
-		var radio = document.querySelector(`input[type="radio"][value="${result[i].value}"]:checked`)
-		var itag = radio.nextElementSibling;
-		radio.parentNode.removeChild(itag);
-		radio.parentNode.style.color = 'black';
-		}			
+		for(let i=0;i<result.length;i++) {
+			if(result[i].nextElementSibling) {
+				result[i].parentNode.removeChild(result[i].nextElementSibling);
+				result[i].parentNode.style.color = 'black';
+			}
+		}
+		this.refs.formContent.reset();
 	}
 	render() {
 		const {list, index} = this.state;

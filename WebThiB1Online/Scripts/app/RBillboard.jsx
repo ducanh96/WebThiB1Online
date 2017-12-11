@@ -1,5 +1,8 @@
-﻿class RBillBoard {
+﻿// import React from 'react';
+// import ReactDOM from 'react-dom';
+class RBillBoard extends React.Component {
     constructor() {
+		super();
         this.state = {
             list: [
                 {
@@ -92,104 +95,121 @@
                 }
             ],
             index: 0,
-            lastResult: 0
+            lastResult: 0, passed: 0
         }
+		this.viewResult = this.viewResult.bind(this);
+		this.makeRetry = this.makeRetry.bind(this);
+		this.changePage = this.changePage.bind(this);
     }
-    deploy() {
-        let html = '';
-        this.state.list.forEach((item, i) => html += `<li class=${this.state.index === i ? 'active' : ''}><a href="#" data-id=${i}>R2 - Test ${i + 1}</a></li>`);
-        $('#dt-list').html(html);
+    viewResult (e) {
+        e.preventDefault();
+		let {list, index, lastResult, passed} = this.state;
 
-        // render
-        this.render();
-        // events
-        this.eventHandler();
-    }
-    eventHandler() {
-        // view result
-        $('#form-content').on('submit', (e) => {
-            e.preventDefault();
-            if(this.state.lastResult !== 0) {
-                swal({
-                    title: 'Try again?',
-                    icon: 'warning',
-                    button: "Let's me try another!"
-                }).then(value => {
-                    if(value) {
-                        this.retry();
-                    }
-                })
-            }
-            else {
-                const result = $('#app-content').find('input[type="radio"]:checked');
-                let {list, index, lastResult} = this.state;
+		const result = document.querySelectorAll('input[type="radio"]:checked');
+		if(passed !== 0) {
+			swal({
+				title: passed === 1 ? 'Try again?' : 'Do next test',
+				text: `Your last score: ${lastResult}`,
+				icon: 'info'
+			}).then(res => {
+				if(res) {					
+					this.resetForm();
+					if(passed === 2) {
+						this.setState({index: index >= list.length-1 ? 0 : index+1});
+					}
+					this.setState({lastResult: 0, passed: 0})
+				}
+			})
+		} else {
+			if(result.length === list[index].questions.length) {
+				let itag;
+				list[index].questions.map((item, i) => {
+					itag = document.createElement('i');
 
-                if(result.length === list[index].questions.length) {
-                    let val;
-                    list[index].questions.map((item, i) => {
-                        val = $(result[i]).val();
-                        if(item.answer === val) {
-                            $(result[i]).parent().append('<i style="margin-left: 12px" class="ion ion-checkmark-round"></i>').css('color', 'green');
-                            lastResult += 1;
-                        } else {
-                            $(result[i]).parent().append('<i style="margin-left: 12px" class="ion ion-close-round"></i>').css('color', 'red');
-                        }
-                    })
+					if(item.answer === result[i].value) {
+						lastResult ++;
 
-                    swal(
-                        `Correct: ${lastResult} / ${list[0].questions.length}`,
-                        `Total scores: ${Math.ceil(lastResult / list[0].questions.length * 100)}`,
-                        "success")
-                } else {
-                    swal('Message', 'You should answer all questions before view result!', 'error');
-                }
-                this.state.lastResult = lastResult;
-            }
-        })
-        // retry
-        $('#btn-retry').on('click', (e) => {
-            e.preventDefault();
-            this.retry();
-        })
-            
-        // change page
-        const that = this;
-        $('#dt-list').find('a').on('click', function (e) {
-            e.preventDefault();
-            $('#dt-list').find(`a[data-id=${that.state.index}]`).parent().toggleClass('active');
-            that.state.index = $(this).data('id');
-            that.render();
-            $(this).parent().toggleClass('active');
-            return;
-        })
+						itag.className = "ion ion-checkmark-round";
+						result[i].parentNode.appendChild(itag);
+						result[i].parentNode.style.color = 'green';
+					} else {
+						itag.className = "ion ion-close-round";
+						result[i].parentNode.appendChild(itag);
+						result[i].parentNode.style.color = 'red';
+					}
+				})
+				const score = Math.ceil(lastResult / list[index].questions.length * 100);
+				this.setState({lastResult: score, passed: score < 50 ? 1 : 2});
+				swal(`Correct: ${lastResult} / ${list[index].questions.length}`, `Total scores: ${score}`, "success");
+			} else {
+				swal('Message', 'You should answer all questions before view result!', 'error');
+			}
+		}
     }
-    retry() {
-        this.state.lastResult = 0;
-        this.render();
+    makeRetry(e) {
+		e.preventDefault();
+        this.resetForm();
+		this.setState({lastResult: 0, passed: 0});
     }
+	changePage(i) {
+		this.resetForm();
+		this.setState({index: i, lastResult: 0, passed: 0});
+	}
+	resetForm() {
+		const result = document.querySelectorAll('input[type="radio"]:checked');
+		for(let i=0;i<result.length;i++) {
+			if(result[i].nextElementSibling) {
+				result[i].parentNode.removeChild(result[i].nextElementSibling);
+				result[i].parentNode.style.color = 'black';
+			}
+		}
+		this.refs.formContent.reset();
+	}
     render() { 
         const {list, index} = this.state;
-        //
-        $('#title').html(`R${index + 1} - Test ${index + 1}`);
-        // render
-        let html = '';
-        list[index].questions.map((item, i) => 
-            html += `<div>
-                        <div class="question-title">
-                            <h4>Question ${i + 1}</h4>
-                        </div>
-                        <div style="margin-top: 15px;">
-                            <h5>${i + 1}.</h5>
-                            <img src='../../public/images/content/app/${item.title}' /><br /><br />
-                            <ul>
-                                <li><label><input type="radio" name=${i} value="${item.answerA}" /> A. ${item.answerA}</label></li>
-                                <li><label><input type="radio" name=${i} value="${item.answerB}" /> B. ${item.answerB}</label></li>
-                                <li><label><input type="radio" name=${i} value="${item.answerC}" /> C. ${item.answerC}</label></li>
-                            </ul>
-                        </div>
-                    </div>`
-        )
-        $('#app-content').html(html);
+		return (
+			<div className="row content">
+				<div className="col-sm-3 sidenav">
+					<h4>List</h4>
+					<ul className="nav nav-pills nav-stacked">
+					{
+						list.map((item, i) => <li key={i} className={index===i ? 'active' : ''}><a onClick={this.changePage.bind(this, i)}>R2 - Test {i+1}</a></li>)
+					}
+					</ul>
+				</div>
+
+				<div className="col-sm-9">
+					<h4><small>R2 - TEST {index+1}</small></h4>
+					<hr />            
+
+					<form ref="formContent" onSubmit={this.viewResult}>
+					{
+						list[index].questions.map((item, i) => (
+							<div>
+								<div className="question-title">
+									<h4>Question {i + 1}</h4>
+								</div>
+								<div style={{marginTop: 15}}>
+									<h5>{i + 1}.</h5>
+									<img src={`../../public/images/content/app/${item.title}`} /><br /><br />
+									<ul>
+										<li><label><input type="radio" name={i} value={item.answerA} /> A. {item.answerA}</label></li>
+										<li><label><input type="radio" name={i} value={item.answerB} /> B. {item.answerB}</label></li>
+										<li><label><input type="radio" name={i} value={item.answerC} /> C. {item.answerC}</label></li>
+									</ul>
+								</div>
+							</div>
+						))
+					}
+					<footer className="container-fluid">
+						<button className="btn btn-primary" style={{marginRight: 5}}>View Result</button>
+						<button className="btn btn-success" onClick={this.makeRetry}>Try again?</button>
+					</footer>
+					</form>
+
+				</div>
+			</div>
+		)
     }
 }
-new RBillBoard().deploy();
+ReactDOM.render(<RBillBoard />, document.getElementById('app'));
