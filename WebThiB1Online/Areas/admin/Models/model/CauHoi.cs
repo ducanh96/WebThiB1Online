@@ -20,8 +20,8 @@ namespace WebThiB1Online.Areas.admin.Models
                     ID = 1,
                     TieuDe = "1. Which chair does the man want?",
                     DapAnA = "/Areas/admin/assets/image/1.1.jpg",
-                    DapAnB = "/Areas/admin/assets/image/1.1.jpg",
-                    DapAnC = "/Areas/admin/assets/image/1.1.jpg",
+                    DapAnB = "/Areas/admin/assets/image/1.2.jpg",
+                    DapAnC = "/Areas/admin/assets/image/1.3.jpg",
                     DapAnD = "Đáp án D câu số " + 1,
                     DapAn = "Đáp án câu " + 1
                 },
@@ -30,8 +30,8 @@ namespace WebThiB1Online.Areas.admin.Models
                     ID = 2,
                     TieuDe = "2. Which chair does the man want?",
                     DapAnA = "/Areas/admin/assets/image/1.1.jpg",
-                    DapAnB = "/Areas/admin/assets/image/1.1.jpg",
-                    DapAnC = "/Areas/admin/assets/image/1.1.jpg",
+                    DapAnB = "/Areas/admin/assets/image/1.2.jpg",
+                    DapAnC = "/Areas/admin/assets/image/1.3.jpg",
                     DapAnD = "Đáp án D câu số " + 2,
                     DapAn = "Đáp án câu " + 2
                 },
@@ -40,8 +40,8 @@ namespace WebThiB1Online.Areas.admin.Models
                     ID = 3,
                     TieuDe = "3. Which chair does the man want?",
                     DapAnA = "/Areas/admin/assets/image/1.1.jpg",
-                    DapAnB = "/Areas/admin/assets/image/1.1.jpg",
-                    DapAnC = "/Areas/admin/assets/image/1.1.jpg",
+                    DapAnB = "/Areas/admin/assets/image/1.2.jpg",
+                    DapAnC = "/Areas/admin/assets/image/1.3.jpg",
                     DapAnD = "Đáp án D câu số " + 3,
                     DapAn = "Đáp án câu " + 3
                 },
